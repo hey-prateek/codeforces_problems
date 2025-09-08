@@ -1,4 +1,4 @@
-// WRONG CODE
+
 
 import java.util.Scanner;
 public class Serval_and_String_Theory
@@ -63,4 +63,4 @@ public class Serval_and_String_Theory
             return new StringBuilder(s).reverse().toString();
         }
     
-}
+    }
