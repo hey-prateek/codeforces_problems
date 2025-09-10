@@ -24,7 +24,7 @@ class ChefPass
 		            passed++;
 		        }
 		    }
-		    System.out.print(passed-1);
+		    System.out.println(passed-1);
             sc.nextLine();
 		}
 
