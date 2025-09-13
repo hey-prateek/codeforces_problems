@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SublimeSequence {
+public class A_SublimeSequence {
     public static void main(String[] args) {
          Scanner sc=new Scanner(System.in);
         int tc=sc.nextInt();
