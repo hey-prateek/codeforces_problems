@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class The_Third_Side {
+public class theThirdSide {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int t = s.nextInt();

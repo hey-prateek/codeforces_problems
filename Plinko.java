@@ -2,7 +2,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Plinko {
+public class plinko {
 
     public static void main(String[] args) {
         

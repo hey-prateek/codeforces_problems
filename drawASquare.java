@@ -1,7 +1,7 @@
 
 
 import java.util.*;
-public class Draw_a_Square {
+public class drawASquare {
     public static void main(String[] args) {
 
         // take input for number of test cases

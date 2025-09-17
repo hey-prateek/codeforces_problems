@@ -1,7 +1,7 @@
 
 
 import java.util.Scanner;
-public class Serval_and_String_Theory
+public class servalAndStringTheory
 {
     public static void main(String[] args) {
         
