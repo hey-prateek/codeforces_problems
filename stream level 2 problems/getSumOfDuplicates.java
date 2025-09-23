@@ -9,6 +9,9 @@ public class getSumOfDuplicates {
 
         int res = lst.stream().filter(s -> Collections.frequency(lst, s) > 1).mapToInt(Integer::intValue).sum();
 
+        // or can use below
+        // int res = lst.stream().filter(s -> Collections.frequency(lst, s) > 1).reduce(0, (a,b)-> a+b);
+
         System.out.print(res);
     }
 }
