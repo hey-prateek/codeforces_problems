@@ -1,33 +1,31 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+class SharedResource {
+    private boolean flag = false;
+
+    public synchronized void actionA(SharedResource other) {
+        while (flag) {
+            System.out.println(Thread.currentThread().getName() + " waiting...");
+            try { wait(); } catch (InterruptedException e) {}
+        }
+        flag = true;
+        System.out.println(Thread.currentThread().getName() + " performing actionA");
+        other.complete();
+    }
+
+    public synchronized void complete() {
+        flag = false;
+        notifyAll();
+    }
+}
 
 public class temp {
-    public static void  main(String[] args)
-    {
-        try(Scanner sc=new Scanner(System.in))
-        {
-            int tc=sc.nextInt();
-            while(tc-- > 0)
-            {
-                int n=sc.nextInt(), temp, res=0;
-                List<Integer> lst=new ArrayList();
-                for(int i=0; i<n; i++)
-                {
-                    temp=sc.nextInt();
-                    if(!lst.contains(temp))
-                    {
-                        lst.add(temp);
-                        res++;
-                    }
-                }
-                System.out.println(res);
+    public static void main(String[] args) {
+        SharedResource r1 = new SharedResource();
+        SharedResource r2 = new SharedResource();
 
-                // can skip only on first encounter
+        Thread t1 = new Thread(() -> r1.actionA(r2), "Thread-1");
+        Thread t2 = new Thread(() -> r2.actionA(r1), "Thread-2");
 
-
-
-            }
-        }
+        t1.start();
+        t2.start();
     }
 }
